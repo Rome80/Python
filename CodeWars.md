@@ -73,6 +73,7 @@ The first word within the output should be capitalized only if the original word
 ## Solution
 
 def to_camel_case(text):
+
     i = 1
     text = text.replace('_', '-')
     text = text.split('-')
