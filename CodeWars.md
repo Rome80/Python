@@ -76,9 +76,7 @@ def to_camel_case(text):
     i = 1
     text = text.replace('_', '-')
     text = text.split('-')
-
     text =  text[0] + ''.join(i.capitalize() for i in text[1:])
-
     return text
     
     
