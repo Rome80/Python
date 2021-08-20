@@ -53,7 +53,7 @@ The string has a length greater or equal to one and contains only letters from a
 ## Solution
 
 def printer_error(s):
-    # your code
+
     errors = 0
     for i in str(s):
         if i > 'm':
