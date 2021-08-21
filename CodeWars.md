@@ -112,7 +112,14 @@ def nb_year(p0, percent, aug, p):
    
 
 
-    
+ def is_prime(num):
+    for i in range(2,num+1):
+        if (num % i) != 0:
+            return True
+        elif (num % i) == 1 or (num % i) == 0:
+            return False
+    return False
+        
     
     
 
