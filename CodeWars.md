@@ -152,6 +152,7 @@ For 4 or more names, the number in and 2 others simply increases.
   ## Solution
   
   def likes(names):
+  
     text = "no one likes this"
     for i in range(len(names)):
         if len(names) == 1:
