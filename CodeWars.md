@@ -110,7 +110,22 @@ def nb_year(p0, percent, aug, p):
     
     return years
    
+## Instructions - Exercise 5
 
+In this kata you will create a function to check a non-negative input to see if it is a prime number.
+
+The function will take in a number and will return True if it is a prime number and False if it is not.
+
+A prime number is a natural number greater than 1 that has no positive divisors other than 1 and itself.
+
+## Examples(input --> output)
+0 --> false
+1 --> false
+2 --> true
+11 --> true
+12 --> false
+
+## Solution
 
  def is_prime(num):
     for i in range(2,num+1):
@@ -119,6 +134,39 @@ def nb_year(p0, percent, aug, p):
         elif (num % i) == 1 or (num % i) == 0:
             return False
     return False
+    
+  ## Instructions - Exercise 6
+  
+ You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. 
+ We want to create the text that should be displayed next to such an item.
+
+Implement the function likes which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+likes([]) # must be "no one likes this"
+likes(["Peter"]) # must be "Peter likes this"
+likes(["Jacob", "Alex"]) # must be "Jacob and Alex like this"
+likes(["Max", "John", "Mark"]) # must be "Max, John and Mark like this"
+likes(["Alex", "Jacob", "Mark", "Max"]) # must be "Alex, Jacob and 2 others like this"
+For 4 or more names, the number in and 2 others simply increases.
+  
+  ## Solution
+  
+  def likes(names):
+    text = "no one likes this"
+    for i in range(len(names)):
+        if len(names) == 1:
+            text = names[i] + " likes this"
+            break
+        elif len(names) == 2:
+            text = (names[i] + " and " + names[i+1] + " like this")
+            break
+        elif len(names) == 3:
+            text = (names[i] + ", " + names[i+1] + " and " + names[i+2] + " like this")
+            break
+        elif len(names) > 3:
+            text = (names[i] + ", " + names[i+1] + " and " + str(len(names)-2) + " others like this")
+            break
+    return text
         
     
     
