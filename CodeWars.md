@@ -168,7 +168,37 @@ For 4 or more names, the number in and 2 others simply increases.
             text = (names[i] + ", " + names[i+1] + " and " + str(len(names)-2) + " others like this")
             break
     return text
-        
+
+
+## Instructions - Exercise 7
+
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. 
+The function should return true if the string is valid, and false if it's invalid.
+
+Examples
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+
+## Solution
+
+def valid_parentheses(string):
+
+    s1 = []
+    for i in string:
+        if(i == '('):
+            s1.append(i)
+        elif(i == ')'):
+            try:
+                s1.pop()
+            except:
+                return False
+
+    if(len(s1) == 0):
+        return True
+    else:
+        return False
     
     
 
